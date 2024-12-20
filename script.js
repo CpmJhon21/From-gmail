@@ -1,26 +1,30 @@
-// script.js
-
-// Fungsi yang dipanggil saat formulir diajukan
-function handleSubmit(event) {
-    event.preventDefault(); // Mencegah pengiriman formulir
-
-    // Mengambil nilai dari input
-    const nama = document.getElementById("nama").value;
-    const gmail = document.getElementById("gmail").value;
-    const nohp = document.getElementById("nohp").value;
-    const tgl_lahir = document.getElementById("tgl_lahir").value;
-    const jenis_kelamin = document.getElementById("jenis_kelamin").value;
-    const kota = document.getElementById("kota").value;
-    const kel_desa = document.getElementById("kel_desa").value;
-    const wilayah = document.getElementById("wilayah").value;
-    const id_car_parking = document.getElementById("id_car_parking").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
-
-    // Lakukan sesuatu dengan nilai-nilai tersebut, seperti mengirimkan ke server atau menampilkan pesan sukses
-    // Misalnya: console.log(nama, gmail, nohp, tgl_lahir, jenis_kelamin, kota, kel_desa, wilayah, id_car_parking, subject, message);
-}
-
-// Menghubungkan fungsi handleSubmit ke formulir
-const form = document.getElementById("registration-form");
-form.addEventListener("submit", handleSubmit);
+document.getElementById("emailChoice").addEventListener("change", function () {
+      const messageField = document.getElementById("messageField");
+      if (this.value === "requestGmail") {
+        messageField.classList.remove("hidden"); // Tampilkan pesan
+      } else {
+        messageField.classList.add("hidden"); // Sembunyikan pesan
+        document.getElementById("message").value = ""; // Kosongkan input
+      }
+    });
+// Reset form setelah submit dan tampilkan pesan sukses
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Mencegah reload halaman
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+        .then((response) => {
+          if (response.ok) {
+            form.reset(); // Reset form
+            document.getElementById("successMessage").classList.remove("hidden"); // Tampilkan pesan sukses
+            document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
+          } else {
+            alert("Terjadi kesalahan. Silakan coba lagi.");
+          }
+        })
+        .catch(() => alert("Gagal mengirim pesan."));
+    });
