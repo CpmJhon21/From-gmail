@@ -20,6 +20,19 @@
       font-size: 18px;
       margin-top: 20px;
     }
+    .back-button {
+      display: none;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .back-button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -119,6 +132,9 @@
     <p id="successMessage" class="success-message">
       Pesan berhasil dikirim! Terima kasih telah menghubungi kami.
     </p>
+
+    <!-- Tombol Back -->
+    <button id="backButton" class="back-button" onclick="window.history.back()">Back</button>
   </section>
 
   <script>
@@ -147,6 +163,7 @@
           if (response.ok) {
             form.reset(); // Reset form
             document.getElementById("successMessage").style.display = "block"; // Tampilkan pesan sukses
+            document.getElementById("backButton").style.display = "block"; // Tampilkan tombol Back
           } else {
             alert("Terjadi kesalahan. Silakan coba lagi.");
           }
