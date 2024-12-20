@@ -18,8 +18,11 @@
 
 // Log data ke console (bisa diganti dengan pengiriman ke server)
       console.log('Pilihan Gmail:', emailChoice);
-      console.log('tel:', nohp);
-      console.log('jenis_Akun_Game:', emailChoice);
+      console.log('nohp:', nohp);
+      console.log('Jenis Akun:', jenis_Akun_Game);
+      console.log('nama:', nama);
+      console.log('nama pengirim:', subject);
+      console.log('Note:', message);
       console.log('Pesan:', message);
 
       // Reset form setelah submit
