@@ -1,4 +1,5 @@
-document.getElementById("emailChoice").addEventListener("change", function () {
+    // Menampilkan atau menyembunyikan field pesan berdasarkan pilihan
+    document.getElementById("emailChoice").addEventListener("change", function () {
       const messageField = document.getElementById("messageField");
       if (this.value === "requestGmail") {
         messageField.classList.remove("hidden"); // Tampilkan pesan
@@ -7,7 +8,8 @@ document.getElementById("emailChoice").addEventListener("change", function () {
         document.getElementById("message").value = ""; // Kosongkan input
       }
     });
-// Reset form setelah submit dan tampilkan pesan sukses
+
+    // Reset form setelah submit dan tampilkan pesan sukses
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function (e) {
       e.preventDefault(); // Mencegah reload halaman
