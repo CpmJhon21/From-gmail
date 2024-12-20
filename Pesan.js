@@ -1,32 +1,38 @@
-// JavaScript untuk mengontrol visibilitas field pesan
-    document.getElementById('emailChoice').addEventListener('change', function () {
+document.getElementById('emailChoice').addEventListener('change', function () {
       const messageField = document.getElementById('messageField');
       if (this.value === 'requestGmail') {
         messageField.classList.remove('hidden'); // Tampilkan pesan
       } else {
         messageField.classList.add('hidden'); // Sembunyikan pesan
-        document.getElementById('message').value = ''; // Kosongkan input jika disembunyikan
+        document.getElementById('message').value = ''; // Kosongkan input
       }
     });
 
-    // JavaScript untuk menangani submit form
-    document.getElementById('gmailForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // Mencegah reload halaman
-      const emailChoice = document.getElementById('emailChoice').value;
-      const message = document.getElementById('message').value;
-    }
+    // Kirim data ke Formspree.io dan reset form
+    document.getElementById('gmailForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Mencegah form reload halaman
 
-// Log data ke console (bisa diganti dengan pengiriman ke server)
-      console.log('Pilihan Gmail:', emailChoice);
-      console.log('nohp:', nohp);
-      console.log('Jenis Akun:', jenis_Akun_Game);
-      console.log('nama:', nama);
-      console.log('nama pengirim:', subject);
-      console.log('Note:', message);
-      console.log('Pesan:', message);
+      const formData = new FormData(this);
+      const successMessage = document.getElementById('successMessage');
 
-      // Reset form setelah submit
-      this.reset();
-      document.getElementById('messageField').classList.add('hidden'); // Sembunyikan pesan
-      alert('Form berhasil dikirim!'); // Tampilkan pesan sukses
+      fetch('https://formspree.io/f/your-form-id', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+.then(response => {
+          if (response.ok) {
+            successMessage.classList.remove('hidden'); // Tampilkan pesan sukses
+            this.reset(); // Hapus isi form
+            setTimeout(() => {
+              successMessage.classList.add('hidden'); // Sembunyikan pesan setelah 3 detik
+            }, 3000);
+          } else {
+            alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi.');
+          }
+        })
+        .catch(() => alert('Terjadi kesalahan jaringan. Silakan coba lagi.'));
     });
