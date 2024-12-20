@@ -10,7 +10,36 @@
     rel="stylesheet"
     type="text/css"
   />
-      <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+    .success-message {
+      color: green;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    .back-button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .back-button:hover {
+      background-color: #45a049;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
 </head>
 <body>
   <section class="text-gray-600 body-font">
@@ -102,44 +131,38 @@
           value="Submit"
           class="bg-blue-500 text-white p-2 rounded cursor-pointer"
         />
-    </div>
-     </form>
+      </div>
+    </form>
 
     <!-- Pesan Sukses -->
-    <p id="successMessage" class="success-message">
+    <p id="successMessage" class="success-message hidden">
       Pesan berhasil dikirim! Terima kasih telah menghubungi kami.
     </p>
 
     <!-- Tombol Back -->
-    <button id="backButton" class="back-button" onclick="window.history.back()">Back</button>
-  </section>
+    <button id="backButton" class="back-button hidden" onclick="window.history.back()">Back</button>
 
-  <div class="social-icons">
-  <a href="https://tiktok.com/@garasidriftcpm" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-  <a href="https://instagram.com/cpm_jhon?igshid=YmMyMTA2M2Y=" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-      <a href="https://youtube.com/@galeri_car_cpm8048" target="_blank"><img src="youtube.png" alt="youtube"></a>
-</div>
-
-    <div class="d-flex flex-column justify-content-center w-100 h-100">
-
-	<div class="d-flex flex-column justify-content-center align-items-center">
-		<h1 class="fw-light text-white m-0">Welcome To My Website</h1>
-		<div class="btn-group my-5">
-			<a href="https://codepen-api-export-production.s3.us-west-2.amazonaws.com/zip/PEN/pyBNzX/1578778289271/pure-css-gradient-background-animation.zip" class="btn btn-outline-light" aria-current="page"><i class="fas fa-file-download me-2"></i>---------</a>
-      <div class="audio-container">
-  <audio controls autoplay>
-    <source src="https://k.top4top.io/m_1644rpx5n1.mp3" type="audio/mpeg">
-    Maaf, browser Anda tidak mendukung pemutar audio.
-  </audio>
-</div>
-			<a href="https://codepen.io/P1N2O/full/pyBNzX" class="btn btn-outline-light"><i class="fas fa-expand ms-2"></i>----------</a>
-		</div>
-		<a href="https://manuel.pinto.dev" class="text-decoration-none">
-			<h5 class="fw-light text-white m-0">— by Cpm_Jhon —</h5>
-		</a>
-	</div>
+    <!-- Menu Social Media -->
+    <div class="social-icons text-center mt-10">
+      <a href="https://tiktok.com/@garasidriftcpm" target="_blank">
+        <img src="tiktok.png" alt="TikTok" />
+      </a>
+      <a href="https://instagram.com/cpm_jhon?igshid=YmMyMTA2M2Y=" target="_blank">
+        <img src="instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://youtube.com/@galeri_car_cpm8048" target="_blank">
+        <img src="youtube.png" alt="YouTube" />
+      </a>
     </div>
-</section>
+
+    <!-- Pemutar Audio -->
+    <div class="audio-container mt-5">
+      <audio controls autoplay>
+        <source src="https://k.top4top.io/m_1644rpx5n1.mp3" type="audio/mpeg">
+        Maaf, browser Anda tidak mendukung pemutar audio.
+      </audio>
+    </div>
+  </section>
 
   <script>
     // Menampilkan atau menyembunyikan field pesan berdasarkan pilihan
