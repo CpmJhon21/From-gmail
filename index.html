@@ -36,9 +36,15 @@
         <label for="emailChoice">Pilih Gmail:</label>
     <select id="emailChoice" name="emailChoice" required>
       <option value="">-- Pilih Opsi --</option>
-      <option value="gmailSaya">Gmail Saya</option>
+      <option value="gmailSaya">Gmail Dari Saya</option>
       <option value="requestGmail">Request Gmail</option>
-    </select><br>
+    </select>
+
+    <!-- Field untuk pesan (hanya untuk Request Gmail) -->
+    <div id="messageField" class="hidden">
+      <label for="message">Pesan:</label>
+      <input type="text" id="message" name="message" placeholder="Ketik pesan Anda di sini">
+    </div>
 	    
         <label for="nohp">No Whatsapp:</label>
         <input type="tel" id="nohp" name="nohp" required><br>
@@ -88,6 +94,18 @@
 </div>
 
     <script src="script.js"></script>
+	      <script>
+    // JavaScript untuk mengontrol visibilitas field pesan
+    document.getElementById('emailChoice').addEventListener('change', function () {
+      const messageField = document.getElementById('messageField');
+      if (this.value === 'requestGmail') {
+        messageField.classList.remove('hidden'); // Tampilkan pesan
+      } else {
+        messageField.classList.add('hidden'); // Sembunyikan pesan
+        document.getElementById('message').value = ''; // Kosongkan input jika disembunyikan
+      }
+    });
+	      </script>
 </body>
     </html>
 	    
