@@ -167,8 +167,11 @@
         })
         .catch(() => alert("Gagal mengirim pesan."));
     });
+    // Mengaktifkan suara musik setelah autoplay berjalan
+    window.addEventListener("load", function () {
+      const audio = document.getElementById("background-music");
+      audio.muted = false; // Mengaktifkan suara
+    });
   </script>
-  <script src="script.js"></script>
-  <script src="musik.js"></script>
 </body>
 </html>
