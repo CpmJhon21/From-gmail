@@ -166,8 +166,8 @@
         .then((response) => {
           if (response.ok) {
             form.reset(); // Reset form
-            document.getElementById("successMessage").style.display = "block"; // Tampilkan pesan sukses
-            document.getElementById("backButton").style.display = "block"; // Tampilkan tombol Back
+            document.getElementById("successMessage").classList.remove("hidden"); // Tampilkan pesan sukses
+            document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
           } else {
             alert("Terjadi kesalahan. Silakan coba lagi.");
           }
