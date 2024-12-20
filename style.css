@@ -1,0 +1,109 @@
+/* style.css */
+
+/* Style header */
+h1 {
+    text-align: center;
+}
+
+/* Style form container */
+form {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Style form fields */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style submit button */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  margin: 10px;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 25px; /* Sesuaikan ukuran ikon sesuai kebutuhan Anda */
+  height: 25px;
+  }
+  body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+  /* Gaya untuk wadah pemutar musik */
+.audio-container {
+  display: center;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Sesuaikan tinggi sesuai kebutuhan Anda */
+  background-color: gold;
+}
+
+/* Gaya untuk pemutar musik */
+audio {
+  width: 100%;
+  max-width: 300px; /* Sesuaikan lebar sesuai kebutuhan Anda */
+}
+
+/* Gaya untuk tombol kontrol */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-start-playback-button {
+  display: flex;
+}
+
+/* Gaya untuk teks jika browser tidak mendukung pemutar audio */
+audio::after {
+  content: "Maaf, browser Anda tidak mendukung pemutar audio.";
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+}
+
+
+}
