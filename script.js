@@ -1,7 +1,6 @@
-// Sembunyikan pesan sukses dan tombol Back saat halaman dimuat
+// Sembunyikan pesan sukses saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("successPopup").classList.add("hidden");
-  document.getElementById("backButton").classList.add("hidden");
 });
 
 // Menampilkan atau menyembunyikan field pesan berdasarkan pilihan
@@ -58,15 +57,16 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-// Tutup pop-up sukses dan sembunyikan tombol kembali
+// Tutup pop-up sukses dan reset form
 document.getElementById("closePopup").addEventListener("click", () => {
-  // Sembunyikan pop-up dan tombol back
+  // Sembunyikan pop-up
   document.getElementById("successPopup").classList.add("hidden");
-  document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
 
   // Reset form agar siap untuk pengisian baru
   form.reset();
 
-  // Sembunyikan tombol Back setelah pop-up ditutup
-  document.getElementById("backButton").classList.add("hidden");
+  // Pastikan elemen-elemen lainnya (seperti field pesan) juga disembunyikan atau dikosongkan
+  const messageField = document.getElementById("messageField");
+  messageField.classList.add("hidden");
+  document.getElementById("message").value = ""; // Kosongkan input pesan
 });
