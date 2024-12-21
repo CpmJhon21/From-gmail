@@ -104,57 +104,30 @@ audio::after {
   text-align: center;
   color: red;
 }
-    .hidden {
+    /* Sembunyikan pesan sukses dan tombol Back di awal */
+#successMessage,
+#backButton {
   display: none;
 }
 
 .success-message {
-  text-align: center;
   color: green;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 2px solid #4caf50;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
   text-align: center;
-  z-index: 1000;
+  margin-top: 20px;
 }
 
-.popup-close {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #4caf50;
+.back-button {
+  display: inline-block;
+  margin: 20px auto;
+  background-color: gray;
   color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-}
-
-.popup-close:hover {
-  background-color: #45a049;
-}
-
-backButton {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
 }
 
 .back-button:hover {
-  background-color: #0056b3;
+  background-color: darkgray;
 }
-
-.border-red-500 {
-  border-color: red !important;
-}
-
