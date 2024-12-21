@@ -1,6 +1,6 @@
 // Sembunyikan pesan sukses dan tombol Back saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("successMessage").classList.add("hidden");
+  document.getElementById("successPopup").classList.add("hidden");
   document.getElementById("backButton").classList.add("hidden");
 });
 
@@ -41,7 +41,7 @@ form.addEventListener("submit", function (e) {
       .then((response) => {
         if (response.ok) {
           form.reset(); // Reset form
-          document.getElementById("successMessage").classList.remove("hidden"); // Tampilkan pesan sukses
+          document.getElementById("successPopup").classList.remove("hidden"); // Tampilkan pop-up sukses
           document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
         } else {
           alert("Terjadi kesalahan. Silakan coba lagi.");
@@ -51,4 +51,9 @@ form.addEventListener("submit", function (e) {
   } else {
     alert("Harap isi semua field yang diperlukan.");
   }
+});
+
+// Tutup pop-up sukses
+document.getElementById("closePopup").addEventListener("click", () => {
+  document.getElementById("successPopup").classList.add("hidden");
 });
