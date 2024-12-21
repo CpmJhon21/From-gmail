@@ -106,9 +106,33 @@
     </form>
 
     <!-- Pesan Sukses -->
-    <p id="successMessage" class="success-message">
+    <p id="successMessage" class="success-message hidden">
       Pesan berhasil dikirim! Terima kasih telah menghubungi kami.
     </p>
+
+    <!-- Tombol Back -->
+    <button id="backButton" class="back-button hidden" onclick="window.history.back()">Back</button>
+
+    <!-- Menu Social Media -->
+    <div class="social-icons text-center mt-10">
+      <a href="https://tiktok.com/@garasidriftcpm" target="_blank">
+        <img src="tiktok.png" alt="TikTok" />
+      </a>
+      <a href="https://instagram.com/cpm_jhon?igshid=YmMyMTA2M2Y=" target="_blank">
+        <img src="instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://youtube.com/@galeri_car_cpm8048" target="_blank">
+        <img src="youtube.png" alt="YouTube" />
+      </a>
+    </div>
+
+    <!-- Pemutar Audio -->
+    <div class="audio-container mt-5">
+      <audio controls autoplay>
+        <source src="https://k.top4top.io/m_1644rpx5n1.mp3" type="audio/mpeg">
+        Maaf, browser Anda tidak mendukung pemutar audio.
+      </audio>
+    </div>
   </section>
 
   <script>
@@ -136,7 +160,8 @@
         .then((response) => {
           if (response.ok) {
             form.reset(); // Reset form
-            document.getElementById("successMessage").style.display = "block"; // Tampilkan pesan sukses
+            document.getElementById("successMessage").classList.remove("hidden"); // Tampilkan pesan sukses
+            document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
           } else {
             alert("Terjadi kesalahan. Silakan coba lagi.");
           }
@@ -147,4 +172,4 @@
 </body>
 </html>
 
-    
+	
