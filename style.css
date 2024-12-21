@@ -104,30 +104,34 @@ audio::after {
   text-align: center;
   color: red;
 }
-    /* Sembunyikan pesan sukses dan tombol Back di awal */
-#successMessage,
-#backButton {
+    .hidden {
   display: none;
 }
 
 .success-message {
-  color: green;
-  font-weight: bold;
   text-align: center;
-  margin-top: 20px;
+  color: green;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 .back-button {
-  display: inline-block;
-  margin: 20px auto;
-  background-color: gray;
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
   color: white;
-  padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   text-align: center;
 }
 
 .back-button:hover {
-  background-color: darkgray;
+  background-color: #45a049;
 }
+
+.border-red-500 {
+  border-color: red !important;
+}
+
