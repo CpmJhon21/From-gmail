@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Menyembunyikan popup sukses saat pertama kali halaman dimuat
   document.getElementById("successPopup").classList.add("hidden");
-  document.getElementById("backButton").classList.add("hidden");
 });
 
 document.getElementById("emailChoice").addEventListener("change", function () {
@@ -42,8 +41,6 @@ form.addEventListener("submit", function (e) {
         if (response.ok) {
           // Tampilkan pop-up sukses
           document.getElementById("successPopup").classList.remove("hidden");
-          // Tampilkan tombol back setelah pesan sukses
-          document.getElementById("backButton").classList.remove("hidden");
         } else {
           alert("Terjadi kesalahan di server. Silakan coba lagi.");
         }
@@ -61,9 +58,8 @@ document.getElementById("closePopup").addEventListener("click", () => {
   // Sembunyikan pop-up sukses
   document.getElementById("successPopup").classList.add("hidden");
 
-  // Reset form dan sembunyikan pesan dan tombol Back
+  // Reset form
   form.reset();
-  document.getElementById("backButton").classList.add("hidden");
   const messageField = document.getElementById("messageField");
   messageField.classList.add("hidden");
   document.getElementById("message").value = ""; // Kosongkan input pesan
