@@ -104,25 +104,30 @@ audio::after {
   text-align: center;
   color: red;
 }
-    .hidden {
-      display: none;
-    }
-    .success-message {
-      display: none;
-      color: green;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    .back-button {
-      display: none;
-      margin-top: 20px;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .back-button:hover {
-      background-color: #45a049;
-    }
+    /* Sembunyikan pesan sukses dan tombol Back di awal */
+#successMessage,
+#backButton {
+  display: none;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px auto;
+  background-color: gray;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.back-button:hover {
+  background-color: darkgray;
+}
