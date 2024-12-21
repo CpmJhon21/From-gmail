@@ -59,7 +59,7 @@ form.addEventListener("submit", function (e) {
 
 // Tutup pop-up sukses dan reset form
 document.getElementById("closePopup").addEventListener("click", () => {
-  // Sembunyikan pop-up
+  // Sembunyikan pop-up sukses
   document.getElementById("successPopup").classList.add("hidden");
 
   // Reset form agar siap untuk pengisian baru
