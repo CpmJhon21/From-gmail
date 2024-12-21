@@ -63,4 +63,5 @@ form.addEventListener("submit", function (e) {
 document.getElementById("closePopup").addEventListener("click", () => {
   document.getElementById("successPopup").classList.add("hidden");
   document.getElementById("backButton").classList.add("hidden"); // Sembunyikan tombol kembali
+  form.reset(); // Reset form agar siap untuk pengisian baru
 });
