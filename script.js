@@ -59,7 +59,8 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-// Tutup pop-up sukses
+// Tutup pop-up sukses dan sembunyikan tombol kembali
 document.getElementById("closePopup").addEventListener("click", () => {
   document.getElementById("successPopup").classList.add("hidden");
+  document.getElementById("backButton").classList.add("hidden"); // Sembunyikan tombol kembali
 });
