@@ -33,6 +33,7 @@ form.addEventListener("submit", function (e) {
   });
 
   if (isValid) {
+    // Kirim form jika valid
     fetch(form.action, {
       method: "POST",
       body: formData,
@@ -40,14 +41,16 @@ form.addEventListener("submit", function (e) {
     })
       .then((response) => {
         if (response.ok) {
-          form.reset(); // Reset form
-          document.getElementById("successPopup").classList.remove("hidden"); // Tampilkan pop-up sukses
-          document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
+          // Menampilkan popup sukses jika form berhasil dikirim
+          document.getElementById("successPopup").classList.remove("hidden");
+          document.getElementById("backButton").classList.remove("hidden"); // Menampilkan tombol Back
         } else {
-          alert("Terjadi kesalahan. Silakan coba lagi.");
+          alert("Terjadi kesalahan di server. Silakan coba lagi.");
         }
       })
-      .catch(() => alert("Gagal mengirim pesan."));
+      .catch(() => {
+        alert("Gagal mengirim pesan. Pastikan koneksi internet stabil.");
+      });
   } else {
     alert("Harap isi semua field yang diperlukan.");
   }
