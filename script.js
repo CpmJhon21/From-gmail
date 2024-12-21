@@ -43,7 +43,6 @@ form.addEventListener("submit", function (e) {
         if (response.ok) {
           // Menampilkan popup sukses jika form berhasil dikirim
           document.getElementById("successPopup").classList.remove("hidden");
-          document.getElementById("backButton").classList.remove("hidden"); // Menampilkan tombol Back
         } else {
           // Tampilkan pesan gagal jika server gagal merespons dengan benar
           alert("Terjadi kesalahan di server. Silakan coba lagi.");
@@ -61,7 +60,13 @@ form.addEventListener("submit", function (e) {
 
 // Tutup pop-up sukses dan sembunyikan tombol kembali
 document.getElementById("closePopup").addEventListener("click", () => {
+  // Sembunyikan pop-up dan tombol back
   document.getElementById("successPopup").classList.add("hidden");
-  document.getElementById("backButton").classList.add("hidden"); // Sembunyikan tombol kembali
-  form.reset(); // Reset form agar siap untuk pengisian baru
+  document.getElementById("backButton").classList.remove("hidden"); // Tampilkan tombol Back
+
+  // Reset form agar siap untuk pengisian baru
+  form.reset();
+
+  // Sembunyikan tombol Back setelah pop-up ditutup
+  document.getElementById("backButton").classList.add("hidden");
 });
