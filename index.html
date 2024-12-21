@@ -106,16 +106,19 @@
       </div>
     </form>
 
-    <!-- Pop-Up Pesan Sukses -->
-    <div id="successPopup" class="hidden popup">
-      <p>Pesan berhasil dikirim! Terima kasih telah menghubungi kami.</p>
-      <button id="closePopup" class="popup-close">Tutup</button>
-    </div>
+    <!-- Popup Sukses -->
+<div id="successPopup" class="hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+    <h2 class="text-xl font-bold mb-4">Pesan Berhasil Dikirim!</h2>
+    <p class="text-gray-600">Terima kasih telah menghubungi kami.</p>
+    <button id="closePopup" class="bg-blue-500 text-white p-2 rounded mt-4">Tutup</button>
+  </div>
+</div>
 
-    <!-- Tombol Back -->
-    <button id="backButton" class="hidden back-button">
-      Back
-    </button>
+<!-- Tombol Back -->
+<button id="backButton" class="back-button bg-blue-500 text-white p-2 rounded cursor-pointer hidden absolute bottom-4 left-1/2 transform -translate-x-1/2">
+  Back
+</button>
   </section>
 
   <!-- Link ke file JavaScript -->
