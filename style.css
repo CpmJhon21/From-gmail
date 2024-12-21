@@ -75,41 +75,7 @@ input[type="submit"] {
 	100% {
 		background-position: 0% 50%;
 	}
-  /* Gaya untuk wadah pemutar musik */
-.audio-container {
-  display: center;
-  justify-content: center;
-  align-items: center;
-  height: 300px; /* Sesuaikan tinggi sesuai kebutuhan Anda */
-  background-color: gold;
-}
-
-/* Gaya untuk pemutar musik */
-audio {
-  width: 100%;
-  max-width: 300px; /* Sesuaikan lebar sesuai kebutuhan Anda */
-}
-
-/* Gaya untuk tombol kontrol */
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-start-playback-button {
-  display: flex;
-}
-
-/* Gaya untuk teks jika browser tidak mendukung pemutar audio */
-audio::after {
-  content: "Maaf, browser Anda tidak mendukung pemutar audio.";
-  display: block;
-  margin-top: 10px;
-  text-align: center;
-  color: red;
-}
-    /* Sembunyikan pesan sukses dan tombol Back di awal */
-#successMessage,
-#backButton {
-  display: none;
-}
-
+	
 .success-message {
   color: green;
   font-weight: bold;
