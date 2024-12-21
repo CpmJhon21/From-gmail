@@ -45,13 +45,16 @@ form.addEventListener("submit", function (e) {
           document.getElementById("successPopup").classList.remove("hidden");
           document.getElementById("backButton").classList.remove("hidden"); // Menampilkan tombol Back
         } else {
+          // Tampilkan pesan gagal jika server gagal merespons dengan benar
           alert("Terjadi kesalahan di server. Silakan coba lagi.");
         }
       })
       .catch(() => {
+        // Tampilkan pesan gagal jika ada masalah koneksi atau kesalahan lainnya
         alert("Gagal mengirim pesan. Pastikan koneksi internet stabil.");
       });
   } else {
+    // Jika form tidak valid, beri peringatan
     alert("Harap isi semua field yang diperlukan.");
   }
 });
