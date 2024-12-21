@@ -107,12 +107,14 @@
     </form>
 
     <!-- Pesan Sukses -->
-    <p id="successMessage" class="success-message">
+    <p id="successMessage" class="hidden success-message">
       Pesan berhasil dikirim! Terima kasih telah menghubungi kami.
     </p>
 
     <!-- Tombol Back -->
-    <button id="backButton" class="back-button">Back</button>
+    <button id="backButton" class="hidden back-button" onclick="window.history.back()">
+      Back
+    </button>
   </section>
 
   <!-- Link ke file JavaScript -->
