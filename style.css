@@ -143,17 +143,11 @@ audio::after {
   background-color: #45a049;
 }
 
-.back-button {
-  position: fixed;
+backButton {
+  position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .back-button:hover {
@@ -163,3 +157,4 @@ audio::after {
 .border-red-500 {
   border-color: red !important;
 }
+
