@@ -1,29 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+<!-- Formulir Kontak -->
+<section class="text-gray-600 body-font">
+  <form id="contactForm" action="https://formspree.io/f/mqakrwvr" method="POST">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+          Contact Us
+        </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+          Forms situs web resmi CPM_Jhon
+        </p>
+      </div>
+
+      <!-- Nama -->
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required class="border p-2 w-full mb-4" />
+
+      <!-- Pilihan Gmail -->
+      <label for="emailChoice">Pilih Gmail:</label>
+      <select id="emailChoice" name="emailChoice" required class="border p-2 w-full mb-4">
+        <option value="">-- Pilih Opsi --</option>
+        <option value="gmail_Dari_Saya">Gmail Dari Saya</option>
+        <option value="requestGmail">Request Gmail</option>
+      </select>
+
+      <!-- Pesan (untuk Request Gmail) -->
+      <div id="messageField" class="hidden">
+        <label for="message">Pesan:</label>
+        <input
+          type="text"
+          id="message"
+          name="message"
+          placeholder="Ketik pesan Anda di sini"
+          class="border p-2 w-full mb-4"
+        />
+      </div>
+
+      <!-- Nomor WhatsApp -->
+      <label for="nohp">No WhatsApp:</label>
+      <input type="tel" id="nohp" name="nohp" required class="border p-2 w-full mb-4" />
+
+      <!-- Jenis Akun Game -->
+      <label for="jenis_Akun_Game">Jenis Akun:</label>
+      <select
+        id="jenis_Akun_Game"
+        name="jenis_Akun_Game"
+        required
+        class="border p-2 w-full mb-4"
+      >
+        <option value="">-- JENIS AKUN --</option>
+        <option value="cpm">Car Parking Multiplayer</option>
+        <option value="cpm2">Car Parking Multiplayer 2</option>
+      </select>
+
+      <!-- Nama Pengirim -->
+      <label for="subject">Nama Pengirim:</label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        required
+        class="border p-2 w-full mb-4"
+      />
+
+      <!-- Note -->
+      <label for="note">Note:</label>
+      <textarea
+        id="note"
+        name="note"
+        rows="4"
+        required
+        class="border p-2 w-full mb-4"
+      ></textarea>
+
+      <!-- Tombol Submit -->
+      <input
+        type="submit"
+        value="Submit"
+        class="bg-blue-500 text-white p-2 rounded cursor-pointer"
+      />
+
+      <!-- Tombol Back (posisi bawah setelah submit) -->
+      <button
+        id="backButton"
+        class="bg-blue-500 text-white p-2 rounded cursor-pointer hidden"
+      >
+        Back
+      </button>
+    </div>
+  </form>
+</section>
+
+<!-- Popup Sukses -->
+<div
+  id="successPopup"
+  class="hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50"
+>
+  <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+    <h2 class="text-xl font-bold mb-4">Pesan Berhasil Dikirim!</h2>
+    <p class="text-gray-600">Terima kasih telah menghubungi kami.</p>
+    <button
+      id="closePopup"
+      class="bg-blue-500 text-white p-2 rounded mt-4"
+    >
+      Tutup
+    </button>
+  </div>
+</div>
+
+<!-- Link ke file JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-  <!-- Link ke file CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+<link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <section class="text-gray-600 body-font">
+<body class="relative">
+  <!-- Splash Screen -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4 relative z-20">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-white text-lg font-bold">CPM_Jhon</a>
+      <div class="hidden md:flex space-x-4">
+        <a href="#" class="text-gray-300 hover:text-white">Home</a>
+        <a href="#" class="text-gray-300 hover:text-white">About</a>
+        <a href="#" class="text-gray-300 hover:text-white">Services</a>
+        <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menuButton" class="text-gray-300 hover:text-white focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden">
+      <a href="#" class="block text-gray-300 hover:text-white p-2">Home</a>
+      <a href="#" class="block text-gray-300 hover:text-white p-2">About</a>
+      <a href="#" class="block text-gray-300 hover:text-white p-2">Services</a>
+      <a href="#" class="block text-gray-300 hover:text-white p-2">Contact</a>
+    </div>
+  </nav>
+
+  <section class="text-gray-600 body-font relative z-20">
     <form id="contactForm" action="https://formspree.io/f/xnnnappg" method="POST">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Forms situs web resmi CPM_Jhon</p>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Contact Us</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-white">Forms situs web resmi CPM_Jhon</p>
         </div>
 
         <!-- Nama -->
-        <label for="nama">Nama:</label>
+        <label for="nama" class="block text-sm font-medium text-white">Nama:</label>
         <input type="text" id="nama" name="nama" required class="border p-2 w-full mb-4" />
 
         <!-- Pilihan Gmail -->
-        <label for="emailChoice">Pilih Gmail:</label>
+        <label for="emailChoice" class="block text-sm font-medium text-white">Pilih Gmail:</label>
         <select id="emailChoice" name="emailChoice" required class="border p-2 w-full mb-4">
           <option value="">-- Pilih Opsi --</option>
           <option value="gmail_Dari_Saya">Gmail Dari Saya</option>
@@ -32,16 +199,16 @@
 
         <!-- Pesan (untuk Request Gmail) -->
         <div id="messageField" class="hidden">
-          <label for="message">Pesan:</label>
+          <label for="message" class="block text-sm font-medium text-white">Pesan:</label>
           <input type="text" id="message" name="message" placeholder="Ketik pesan Anda di sini" class="border p-2 w-full mb-4" />
         </div>
 
         <!-- Nomor WhatsApp -->
-        <label for="nohp">No WhatsApp:</label>
+        <label for="nohp" class="block text-sm font-medium text-white">No WhatsApp:</label>
         <input type="tel" id="nohp" name="nohp" required class="border p-2 w-full mb-4" />
 
         <!-- Jenis Akun Game -->
-        <label for="jenis_Akun_Game">Jenis Akun:</label>
+        <label for="jenis_Akun_Game" class="block text-sm font-medium text-white">Jenis Akun:</label>
         <select id="jenis_Akun_Game" name="jenis_Akun_Game" required class="border p-2 w-full mb-4">
           <option value="">-- JENIS AKUN --</option>
           <option value="cpm">Car Parking Multiplayer</option>
@@ -49,11 +216,11 @@
         </select>
 
         <!-- Nama Pengirim -->
-        <label for="subject">Nama Pengirim:</label>
+        <label for="subject" class="block text-sm font-medium text-white">Nama Pengirim:</label>
         <input type="text" id="subject" name="subject" required class="border p-2 w-full mb-4" />
 
         <!-- Note -->
-        <label for="note">Note:</label>
+        <label for="note" class="block text-sm font-medium text-white">Note:</label>
         <textarea id="note" name="note" rows="4" required class="border p-2 w-full mb-4"></textarea>
 
         <!-- Tombol Submit -->
@@ -70,7 +237,14 @@
     </div>
   </section>
 
+  <!-- Background Music -->
+  <audio id="backgroundMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
   <!-- Link ke file JavaScript -->
   <script src="script.js"></script>
+    <script src="musik.js"></script>
 </body>
 </html>
