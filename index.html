@@ -10,7 +10,8 @@
     rel="stylesheet"
     type="text/css"
   />
-	<link rel="stylesheet" href="style.css"
+  <!-- Link ke file CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <section class="text-gray-600 body-font">
@@ -102,6 +103,28 @@
           value="Submit"
           class="bg-blue-500 text-white p-2 rounded cursor-pointer"
         />
+
+        <!-- Social Media -->
+        <div class="social-media mt-6">
+          <h3 class="text-gray-700 mb-2">Follow Us</h3>
+          <ul class="flex justify-center space-x-4">
+            <li>
+              <a href="https://www.instagram.com" target="_blank" class="text-blue-500">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com" target="_blank" class="text-red-500">
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com" target="_blank" class="text-black">
+                TikTok
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </form>
 
@@ -111,44 +134,10 @@
     </p>
 
     <!-- Tombol Back -->
-    <button id="backButton" class="back-button" onclick="window.history.back()">Back</button>
+    <button id="backButton" class="back-button">Back</button>
   </section>
 
-  <script>
-    // Menampilkan atau menyembunyikan field pesan berdasarkan pilihan
-    document.getElementById("emailChoice").addEventListener("change", function () {
-      const messageField = document.getElementById("messageField");
-      if (this.value === "requestGmail") {
-        messageField.classList.remove("hidden"); // Tampilkan pesan
-      } else {
-        messageField.classList.add("hidden"); // Sembunyikan pesan
-        document.getElementById("message").value = ""; // Kosongkan input
-      }
-    });
-
-    // Reset form setelah submit dan tampilkan pesan sukses
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Mencegah reload halaman
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      })
-        .then((response) => {
-          if (response.ok) {
-            form.reset(); // Reset form
-            document.getElementById("successMessage").style.display = "block"; // Tampilkan pesan sukses
-            document.getElementById("backButton").style.display = "block"; // Tampilkan tombol Back
-          } else {
-            alert("Terjadi kesalahan. Silakan coba lagi.");
-          }
-        })
-        .catch(() => alert("Gagal mengirim pesan."));
-    });
-  </script>
+  <!-- Link ke file JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-	
